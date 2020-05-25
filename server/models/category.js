@@ -2,7 +2,7 @@
     const Schema = mongoose.Schema
 
     const CategorySchema = new Schema({
-    type: {tpye: String, unique: true, required: true}
+    type: {type: String, unique: true, required: true}
     
      });
 

@@ -24,27 +24,14 @@
     app.use(bodyParser.urlencoded({extended: false}))
 
 
-    //*********GET - Retrieve data from server************//
-    app.get('/', (req, res) =>{
-    res.send("Hello from Amazon")
-    })
+     //*********** ******Require Api********************/
+    const productRoutes = require("./routes/product")
+    const categoryRoutes = require("./routes/category")
+    const ownerRoutes = require("./routes/owner")
 
-    //***********POST- send data from frontend*************//
-    app.post('/', (req, res) =>{
-    let user = new User();
-    user.name = req.body.name
-    user.email = req.body.email
-    user.password = req.body.password
-    user.save((err) =>{
-    if(err){
-    res.json(err)
-    }else{
-    res.json("Successfully Saved...")
-        }
-    })
-
-    })
-
+    app.use("/api", productRoutes) 
+    app.use("/api", categoryRoutes) 
+    app.use("/api", ownerRoutes) 
     
     //**************** LISTEN TO PORT *********************//
     app.listen(3000, (err) =>{
@@ -54,3 +41,7 @@
     console.log("CONNECTED TO PORT 3000...")
     }
     })
+
+
+   
+    
