@@ -71,7 +71,7 @@
           }
           })
 
-     //**************PUT REQUEST - Update a single product************//
+     //**************PUT REQUEST - Update a single product*git***********//
           router.put("/products/:id", upload.single("photo"), async (req, res) =>{
           try{
           let product = await Product.findOneAndUpdate({_id: req.params.id}, {

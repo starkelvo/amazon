@@ -34,11 +34,11 @@
     app.use("/api", ownerRoutes) 
     
     //**************** LISTEN TO PORT *********************//
-    app.listen(3000, (err) =>{
+    app.listen(5000, (err) =>{
     if(err){
     console.log(err)
     } else {
-    console.log("CONNECTED TO PORT 3000...")
+    console.log("CONNECTED TO PORT 5000...")
     }
     })
 
