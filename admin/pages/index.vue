@@ -1,5 +1,8 @@
 <template>
-
+<div>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
  <main style="margin-left:20px">
      <div class="a-spacing-large"> </div>
         <div class="container-fluid-browsing-history">
@@ -41,11 +44,12 @@
                           <!-- Product rating -->
                          <div class="a-row">
                           <a href="#">
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
+                         
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
                           </a>
                             <span class="a-letter-space"></span>
                             <span class="a-color-tertiary a-size-small asin-reviews">(1745)</span>
@@ -68,16 +72,14 @@
 
                           </div>  
  </main>
-
+</div>
 </template>
 
 <script>
-
-
+// import rating from "../components/rating.vue"
 export default {
   
   // asyncData is fetching data before nuxt page finish loading on the browser for SEO purposes
-
   async asyncData({ $axios }){
     try {
       let response = await $axios.$get("http://localhost:5000/api/products")
@@ -85,13 +87,19 @@ export default {
       return{
         products: response.products
       }
-
     } catch (err) {
       
     }
-
-  }
+  },
+  // components: {
+  //   rating
+  // }
 }
 
 </script>
 
+<style scoped>
+.checked {
+  color: orange;
+}
+</style>

@@ -4,6 +4,7 @@
     const mongoose = require("mongoose");
     const dotenv = require("dotenv");
     const User = require("./models/user");
+    const cors  = require("cors")
 
     
     dotenv.config();
@@ -19,6 +20,7 @@
     });
 
     //************MIDDLEWARE*****************************//
+    app.use(cors())
     app.use(morgan('dev'))
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({extended: false}))
@@ -33,7 +35,7 @@
     app.use("/api", categoryRoutes) 
     app.use("/api", ownerRoutes) 
     
-    //**************** LISTEN TO PORT *********************//
+    //**************** LISTEN TO PORT ********************//
     app.listen(5000, (err) =>{
     if(err){
     console.log(err)

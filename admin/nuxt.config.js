@@ -14,8 +14,8 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'font-awesome/css/all.css' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, 
+      { rel: 'stylesheet', href: '/font-awesome/css/all.css' },
       { rel: 'stylesheet', href: '/css/default.css' }
     ]
   },
@@ -42,6 +42,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+  
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
