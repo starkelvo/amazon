@@ -77,7 +77,7 @@
                <hr>
                <div class="a-spacing-top-large">
                    <span class="a-button-register">
-                       <span class="a-button-inner-text" @click="onAddProduct"> Add Product </span>
+                       <span class="a-button-inner-text" @click="onAddProduct" style="width: 100px">Add Product </span>
                    </span>
                </div>
            </div>
